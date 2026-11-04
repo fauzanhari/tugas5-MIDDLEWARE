@@ -190,7 +190,7 @@ Request ke alamat yang tidak terdaftar menghasilkan status 404 `ROUTE_NOT_FOUND`
 
 Request ditolak karena header API Key tidak dikirim, dengan status 401.
 
-![POST tanpa API Key](screenshot/04-apkeyi.png)
+![POST tanpa API Key](screenshot/04-key.png)
 
 **5. Data tidak lolos validasi**
 
