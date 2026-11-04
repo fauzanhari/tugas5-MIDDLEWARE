@@ -172,55 +172,55 @@ Skenario yang dicoba mencakup daftar buku, filter kategori, detail buku yang ter
 
 Menampilkan catatan logger dengan status 404, 401, 422, 201, dan 204.
 
-![Log request pada terminal](screenshot/01-log-server.png)
+![Log request pada terminal](screenshot/01-log.png)
 
 **2. Detail buku tidak ditemukan**
 
 Request GET dengan ID yang tidak tersedia menghasilkan status 404 `NOT_FOUND`.
 
-![GET detail buku 404](screenshot/02-detail-buku-404.png)
+![GET detail buku 404](screenshot/02-detail.png)
 
 **3. URL tidak dikenal**
 
 Request ke alamat yang tidak terdaftar menghasilkan status 404 `ROUTE_NOT_FOUND`.
 
-![URL tidak dikenal](screenshot/03-rute-tidak-dikenal.png)
+![URL tidak dikenal](screenshot/03-url.png)
 
 **4. POST tanpa API Key**
 
 Request ditolak karena header API Key tidak dikirim, dengan status 401.
 
-![POST tanpa API Key](screenshot/04-api-key-401.png)
+![POST tanpa API Key](screenshot/04-apkeyi.png)
 
 **5. Data tidak lolos validasi**
 
 Joi menemukan input yang tidak sesuai dan API mengembalikan status 422 `VALIDATION_ERROR`.
 
-![POST validasi 422](screenshot/05-validasi-422.png)
+![POST validasi 422](screenshot/05-validasi.png)
 
 **6. Judul buku sudah terdaftar**
 
 Request dengan judul yang sama ditolak menggunakan status 409 `JUDUL_DUPLIKAT`.
 
-![POST judul duplikat 409](screenshot/06-judul-duplikat-409.png)
+![POST judul duplikat 409](screenshot/06-duplikat.png)
 
 **7. Berhasil menambahkan buku**
 
 Data yang sesuai aturan berhasil disimpan dan API memberikan status 201.
 
-![POST berhasil 201](screenshot/07-tambah-buku-201.png)
+![POST berhasil 201](screenshot/07-tambah.png)
 
 **8. Berhasil menghapus buku**
 
 Buku yang tersedia berhasil dihapus. Respons yang diterima adalah 204 No Content.
 
-![DELETE berhasil 204](screenshot/08-hapus-buku-204.png)
+![DELETE berhasil 204](screenshot/08-hapus.png)
 
 **9. Percobaan error 500**
 
 Untuk menguji error handler, pemanggilan `koleksiBuku.push(bukuBaru)` di `services/bukuService.js` diubah sementara menjadi `koleksiBuku.dorong(bukuBaru)`. Request POST yang valid kemudian menghasilkan error internal. Client menerima pesan umum, sedangkan detail kesalahan terlihat di terminal. Setelah screenshot diambil, kode dikembalikan lagi menjadi `push()`.
 
-![Pengujian error 500 pada client dan terminal](screenshot/09-error-500-klien-terminal.png)
+![Pengujian error 500 pada client dan terminal](screenshot/09-error.png)
 
 ## Peran Saya dan Bantuan AI
 
